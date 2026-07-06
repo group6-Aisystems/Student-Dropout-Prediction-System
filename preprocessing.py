@@ -1,15 +1,3 @@
-import pandas as pd
-from sklearn.model_selection import train_test_split
-
-# Load dataset
-df = pd.read_csv("data.csv", sep=";")
-
-# Explore dataset
-print(df.head())
-df.info()
-print(df.describe())
-print(df["Target"].value_counts())
-
 # Encode target labels
 df["Target"] = df["Target"].map({
     "Dropout": 0,
