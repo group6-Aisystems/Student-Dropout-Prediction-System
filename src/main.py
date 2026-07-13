@@ -1,5 +1,5 @@
 from preprocessing import preprocess_data
-from model_training import train_model
+from training import train_model
 from fairness_analysis import fairness_analysis
 
 
