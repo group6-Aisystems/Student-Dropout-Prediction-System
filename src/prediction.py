@@ -3,8 +3,12 @@
 import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score, classification_report
-from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    ConfusionMatrixDisplay,
+)
 
 
 def evaluate_model():
@@ -14,16 +18,17 @@ def evaluate_model():
 
     # Load model and test data
     model = joblib.load("dropout_model.pkl")
-    X_test = joblib.load("X_test.pkl")
-    y_test = joblib.load("y_test.pkl")
-    feature_names = joblib.load("feature_names.pkl")
+
+    X_train, X_test, y_train, y_test, feature_names = joblib.load(
+        "processed_data.pkl"
+    )
 
     # Make predictions
     y_pred = model.predict(X_test)
 
     # Accuracy
     accuracy = accuracy_score(y_test, y_pred)
-    print("Accuracy:", accuracy)
+     print(f"\nModel Accuracy: {accuracy:.4f}")
 
     # Classification report
     print("\nClassification Report:")
