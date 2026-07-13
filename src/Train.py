@@ -10,9 +10,12 @@ def train_model():
     Train a Random Forest model using preprocessed training data.
     """
 
-    # Load training data
-    X_train = joblib.load("X_train.pkl")
-    y_train = joblib.load("y_train.pkl")
+ # Load processed training and testing data
+    X_train, X_test, y_train, y_test, feature_names = joblib.load(
+        "processed_data.pkl"
+    )
+
+
 
     # Create model
     model = RandomForestClassifier(
@@ -26,7 +29,9 @@ def train_model():
     # Save trained model
     joblib.dump(model, "dropout_model.pkl")
 
-    print("Model training completed.")
+    print("\nModel training completed successfully.")
+    print(f"Training samples : {len(X_train)}")
+    print(f"Number of features : {X_train.shape[1]}")
     print("Trained model saved as dropout_model.pkl")
 
 
