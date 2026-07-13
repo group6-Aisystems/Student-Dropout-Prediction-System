@@ -210,10 +210,7 @@ Student-Dropout-Prediction-System/
 │
 ├── notebooks/
 │   ├── Student_dropout_prediction.ipynb
-│   └── fastAPI_Deployment.ipynb
-├── app.py          
-├── schemas.py      
-├── api_test.py     
+│   └── fastAPI_Deployment.ipynb    
 ├── figures/
 │
 └── docs/
