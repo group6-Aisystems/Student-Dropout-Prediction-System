@@ -206,14 +206,14 @@ Student-Dropout-Prediction-System/
 │   |-- training.py
 │   |-- prediction.py
 │   |-- fairness_analysis.py
-|   |-- app.py   fastAPI API
-|   |-- utils.py
 |   |-- main.py
 │
 ├── notebooks/
 │   ├── Student_dropout_prediction.ipynb
 │   └── fastAPI_Deployment.ipynb
-│
+├── app.py          
+├── schemas.py      
+├── api_test.py     
 ├── figures/
 │
 └── docs/
