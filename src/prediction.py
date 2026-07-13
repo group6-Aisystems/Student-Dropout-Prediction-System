@@ -28,7 +28,7 @@ def evaluate_model():
 
     # Accuracy
     accuracy = accuracy_score(y_test, y_pred)
-     print(f"\nModel Accuracy: {accuracy:.4f}")
+    print(f"\nModel Accuracy: {accuracy:.4f}")
 
     # Classification report
     print("\nClassification Report:")
