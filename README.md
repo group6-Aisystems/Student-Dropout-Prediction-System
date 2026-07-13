@@ -189,40 +189,31 @@ The project also addresses several AI Systems Engineering requirements:
 # Repository Structure
 
 ```
-Student-Dropout-Prediction-System
+Student-Dropout-Prediction-System/
 │
 ├── README.md
 ├── requirements.txt
+├── .gitignore
 │
-├── data
-│   └── student_dropout_dataset.csv
+├── data/
+│   └── data.csv
 │
-├── notebooks
-│   ├── Student_Dropout_Prediction.ipynb
-│   └── FastAPI_Deployment.ipynb
-│
-├── models
+├── models/
 │   └── dropout_model.pkl
 │
-├── figures
-│   ├── architecture_diagram.png
-│   ├── confusion_matrix.png
-│   ├── feature_importance.png
-│   ├── performance_metrics.png
-│   └── classwise_f1.png
+├── src/
+│   ├── preprocessing.py
+│   ├── train.py
+│   ├── prediction.py
+│   └── fairness_analysis.py
 │
-├── screenshots
-│   ├── swagger_home.png
-│   └── swagger_prediction.png
+├── notebooks/
+│   ├── Student_dropout_prediction.ipynb
+│   └── fastAPI_Deployment.ipynb
 │
-└── docs
-    ├── dataset_description.md
-    ├── fairness_analysis.md
-    ├── security_analysis.md
-    ├── monitoring_and_maintenance.md
-    ├── contributor_roles.md
-    ├── video_demo_link.md
-    └── Final_Report.pdf
+├── figures/
+│
+└── docs/
 ```
 
 ---
@@ -230,16 +221,16 @@ Student-Dropout-Prediction-System
 # Installation
 
 Clone the repository:
+git clone https://github.com/group6-Aisystems/Student-Dropout-Prediction-System.git
+cd Student-Dropout-Prediction-System
 
-```bash
-git clone https://github.com/<repository-name>.git
-```
-
-Install the required packages:
-
-```bash
 pip install -r requirements.txt
-```
+
+python src/preprocessing.py
+python src/train.py
+python src/prediction.py
+
+uvicorn app:app --reload
 
 Run the notebook to train the model or execute the FastAPI deployment notebook to launch the API.
 
