@@ -200,12 +200,15 @@ Student-Dropout-Prediction-System/
 │
 ├── models/
 │   └── dropout_model.pkl
-│
+│   |-- processed_data.pkl
 ├── src/
-│   ├── preprocessing.py
-│   ├── train.py
-│   ├── prediction.py
-│   └── fairness_analysis.py
+│   |-- preprocessing.py
+│   |-- training.py
+│   |-- prediction.py
+│   |-- fairness_analysis.py
+|   |-- app.py   fastAPI API
+|   |-- utils.py
+|   |-- main.py
 │
 ├── notebooks/
 │   ├── Student_dropout_prediction.ipynb
@@ -227,7 +230,7 @@ cd Student-Dropout-Prediction-System
 pip install -r requirements.txt
 
 python src/preprocessing.py
-python src/train.py
+python src/training.py
 python src/prediction.py
 
 uvicorn app:app --reload
