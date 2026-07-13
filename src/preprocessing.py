@@ -3,14 +3,15 @@ import joblib
 from sklearn.model_selection import train_test_split
 
 
-def preprocess_data(file_path="data.csv"):
+def preprocess_data(file_path="data/data.csv"):
     """
     Load and preprocess the student dropout dataset.
     """
 
     # Load dataset
     df = pd.read_csv(file_path, sep=";")
-
+    print("\nMissing Values:")
+    print(df.isnull().sum())
     # Display dataset information
     print("First 5 Rows:")
     print(df.head())
@@ -43,7 +44,7 @@ def preprocess_data(file_path="data.csv"):
         random_state=42,
         stratify=y
     )
-
+    print(f"\nNumber of Features: {X.shape[1]}")
     print("\nTraining Set Shape:", X_train.shape)
     print("Testing Set Shape:", X_test.shape)
 
