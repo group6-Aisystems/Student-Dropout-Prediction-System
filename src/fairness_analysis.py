@@ -15,7 +15,7 @@ def fairness_analysis():
     )
 
     # Load original dataset
-    df = pd.read_csv("data.csv", sep=";")
+    df = pd.read_csv("data/data.csv", sep=";")
 
     # Encode target labels
     df["Target"] = df["Target"].map({
